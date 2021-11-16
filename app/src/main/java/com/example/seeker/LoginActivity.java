@@ -35,9 +35,9 @@ public class LoginActivity extends AppCompatActivity {
         etUsername = (EditText) findViewById(R.id.etUsername);
         etPassword = (EditText) findViewById(R.id.etPassword);
         btnLogin = (Button) findViewById(R.id.btnLogin);
-        //tvRegister = (TextView) findViewById(R.id.tvRegister);
+        tvRegister = (TextView) findViewById(R.id.tvRegister);
 
-       /* tvRegister.setOnClickListener(new View.OnClickListener() {
+       tvRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Log.i(TAG, "onClick SignUp text");
@@ -46,7 +46,7 @@ public class LoginActivity extends AppCompatActivity {
                 startActivity(i);
                 finish();
             }
-        });*/
+        });
 
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override

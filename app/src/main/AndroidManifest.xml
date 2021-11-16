@@ -5,6 +5,9 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
 
+    <uses-permission-sdk-23 android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+
     <application
         android:name=".ParseApplication"
         android:allowBackup="true"
@@ -14,7 +17,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Seeker">
 
-
+        <activity android:name=".SearchActivity"></activity>
         <activity android:name=".RegisterActivity" />
         <activity android:name=".MainActivity" />
         <activity android:name=".LoginActivity">
@@ -26,5 +29,11 @@
         </activity>
 
     </application>
+    <queries>
+        <!-- Camera -->
+        <intent>
+            <action android:name="android.media.action.IMAGE_CAPTURE" />
+        </intent>
+    </queries>
 
 </manifest>

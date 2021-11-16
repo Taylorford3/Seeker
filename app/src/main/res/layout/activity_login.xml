@@ -1,37 +1,97 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/LinearLayout"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_margin="16dp"
-    android:orientation="vertical"
+    android:layout_height="match_parent"
+    android:background="@drawable/screen_shot_2021_10_28_at_8_39_50_pm"
+    android:gravity="center"
+    android:padding="16dp"
     tools:context=".LoginActivity">
 
-    <EditText
-        android:id="@+id/etUsername"
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:ems="10"
-        android:hint="username" />
+        android:layout_gravity="center">
 
-    <EditText
-        android:id="@+id/etPassword"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:ems="10"
-        android:hint="password"
-        android:inputType="textPassword" />
+    </RelativeLayout>
 
-    <Button
-        android:id="@+id/btnLogin"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:text="Login" />
+    <androidx.cardview.widget.CardView
+        android:layout_width="388dp"
+        android:layout_height="363dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="307dp"
+        android:layout_marginEnd="7dp"
+        android:layout_marginBottom="45dp"
+        android:padding="10dp">
 
-</LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+
+            android:layout_margin="5dp"
+            android:orientation="vertical">
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/passError"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                app:passwordToggleEnabled="true">
+
+                <EditText
+                    android:id="@+id/etPassword"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:hint="@string/prompt_password"
+                    android:inputType="textPassword"
+                    android:maxLines="1"
+                    android:paddingStart="5dp"
+                    android:singleLine="true" />
+
+                <Button
+                    android:id="@+id/btnLogin"
+                    android:layout_width="326dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="20dp"
+                    android:background="#323030"
+                    android:text="@string/login"
+                    android:textColor="#E5213C"
+                    android:textSize="16sp"
+                    app:iconTint="#0B0A3E" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:id="@+id/tvRegister"
+                android:layout_width="307dp"
+                android:layout_height="36dp"
+                android:layout_marginStart="31dp"
+                android:layout_marginTop="5dp"
+                android:gravity="center"
+                android:text="@string/create_new"
+                android:textColor="#383838"
+                android:textSize="16sp" />
+
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/etUsername"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginTop="10dp"
+            android:hint="@string/prompt_username"
+            android:inputType="textNoSuggestions"
+            android:maxLines="1"
+            android:paddingStart="5dp"
+            android:shadowColor="#807B7B"
+            android:singleLine="true" />
+
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>
