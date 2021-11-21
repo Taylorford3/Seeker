@@ -12,6 +12,7 @@ public class User extends ParseObject {
     public static final String KEY_PROFILEPIC = "profile";
     public static final String KEY_USERNAME = "username";
     public static final String KEY_BUSINESS2 = "bus_name";
+    public static final String KEY_CREATED_KEY = "createdAt";
 
 
     public String getUsername() {

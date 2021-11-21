@@ -1,11 +1,15 @@
 package com.example.seeker;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -52,6 +56,7 @@ public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.ViewHolder> 
         private ImageView ivImage;
         private TextView tvDescription;
         private TextView tvBusiness;
+        LinearLayout container;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -59,6 +64,7 @@ public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.ViewHolder> 
             tvBusiness = itemView.findViewById(R.id.tvBusiness);
             ivImage = itemView.findViewById(R.id.ivImage);
             tvDescription = itemView.findViewById(R.id.tvDescription);
+            container = itemView.findViewById(R.id.container);
         }
 
         public void bind(Post post) {
@@ -69,7 +75,17 @@ public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.ViewHolder> 
             ParseFile image = post.getImage();
             if (image != null) {
                 Glide.with(context).load(post.getImage().getUrl()).into(ivImage);
+
+                container.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Toast.makeText(context, post.getBusiness(), Toast.LENGTH_SHORT).show();
+                        Intent i = new Intent(context, ReviewActivity.class);
+                        context.startActivity(i);
+                    }
+                });
             }
+
 
         }
     }

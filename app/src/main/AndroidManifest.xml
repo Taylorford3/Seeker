@@ -5,7 +5,16 @@
 
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
+
     <uses-permission-sdk-23 android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <queries>
+
+        <!-- Camera -->
+        <intent>
+            <action android:name="android.media.action.IMAGE_CAPTURE" />
+        </intent>
+    </queries>
 
     <application
         android:name=".ParseApplication"
@@ -17,8 +26,8 @@
         android:theme="@style/Theme.Seeker"
         android:usesCleartextTraffic="true"
         tools:targetApi="m">
-
-        <activity android:name=".AdminActivity"/>
+        <activity android:name=".ReviewActivity"></activity>
+        <activity android:name=".AdminActivity" />
         <activity android:name=".SearchActivity" />
         <activity android:name=".RegisterActivity" />
         <activity android:name=".MainActivity" />
@@ -40,15 +49,5 @@
                 android:resource="@xml/fileprovider" />
         </provider>
     </application>
-
-
-    <queries>
-
-        <!-- Camera -->
-        <intent>
-            <action android:name="android.media.action.IMAGE_CAPTURE" />
-        </intent>
-    </queries>
-
 
 </manifest>
