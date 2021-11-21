@@ -5,6 +5,7 @@ plugins {
 android {
     compileSdkVersion 30
     buildToolsVersion "30.0.3"
+    dataBinding.enabled = true
 
     defaultConfig {
         applicationId "com.example.seeker"
@@ -50,7 +51,7 @@ dependencies {
 
     implementation 'androidx.appcompat:appcompat:1.0.0'
     implementation 'androidx.recyclerview:recyclerview:1.0.0'
-
+    annotationProcessor 'org.parceler:parceler:1.1.12'
 
 
 }

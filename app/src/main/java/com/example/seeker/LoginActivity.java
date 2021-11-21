@@ -12,6 +12,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.parse.LogInCallback;
+import com.parse.ParseObject;
 import com.parse.ParseUser;
 
 public class LoginActivity extends AppCompatActivity {
@@ -20,6 +21,7 @@ public class LoginActivity extends AppCompatActivity {
     private EditText etUsername, etPassword;
     Button btnLogin;
     TextView tvRegister;
+
 
 
     @Override
@@ -95,6 +97,8 @@ public class LoginActivity extends AppCompatActivity {
 
 
 
+
+
     private void loginUser(String username, String password) {
         // DONT DO JUST LOGIN -- want to run in background so doesnt freeze up UI
         ParseUser.logInInBackground(username, password, new LogInCallback() {
@@ -107,8 +111,27 @@ public class LoginActivity extends AppCompatActivity {
 
                 goMainActivity();
                 Toast.makeText(LoginActivity.this, "Success", Toast.LENGTH_SHORT).show();
+
+
+
+
+
+                Boolean AdminValue = user.getBoolean("Admin");
+                if( AdminValue == false) {
+                    goMainActivity();
+                    Toast.makeText(LoginActivity.this, "login Success!", Toast.LENGTH_SHORT).show();
+                }
+                if (AdminValue == true) {
+                    goAdminActivity();
+                    Toast.makeText(LoginActivity.this, "Admin login Success!", Toast.LENGTH_SHORT).show();
+                }
             }
         });
+    }
+
+    private void goAdminActivity() {
+        Intent i = new Intent(this, AdminActivity.class);
+        startActivity(i);
     }
 
     private void goMainActivity() {
@@ -116,3 +139,4 @@ public class LoginActivity extends AppCompatActivity {
         startActivity(i);
     }
 }
+

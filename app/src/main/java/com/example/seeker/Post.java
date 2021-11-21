@@ -16,13 +16,12 @@ public class Post extends ParseObject {
     public static final String KEY_USER = "user";
     public static final String KEY_CREATED_KEY = "createdAt";
 
-
     public String getDescription() {
         return getString(KEY_DESCRIPTION);
     }
 
-    public void setDescription(String category_id){
-        put(KEY_DESCRIPTION, category_id);
+    public void setDescription(String description){
+        put(KEY_DESCRIPTION, description);
     }
 
     public ParseFile getImage(){
@@ -37,8 +36,8 @@ public class Post extends ParseObject {
         return getParseUser(KEY_USER);
     }
 
-    public void setUser(ParseUser bus_name){
-        put(KEY_USER, bus_name);
+    public void setUser(ParseUser user){
+        put(KEY_USER, user);
     }
 }
 

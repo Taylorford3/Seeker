@@ -72,7 +72,7 @@ public class PostsFragment extends Fragment {
         query.setLimit(20);
         query.addDescendingOrder(Post.KEY_CREATED_KEY);
 
-        /*
+
         query.findInBackground(new FindCallback<Post>() {
             @Override
             public void done(List<Post> posts, ParseException e) {
@@ -84,11 +84,11 @@ public class PostsFragment extends Fragment {
                     Log.i(TAG, "Post: " + post.getDescription() + ", username" + post.getUser().getUsername());
                 }
 
-                allPosts.addAll(posts);
+              allPosts.addAll(posts);
                 adapter.notifyDataSetChanged();
 
             }
-        });*/
+        });
     }
 
 

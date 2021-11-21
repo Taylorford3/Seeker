@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
 
         // define your fragments here
         final Fragment postsfragment    = new PostsFragment();
-        //final Fragment profilefragment = new ProfileFragment();
+        final Fragment morefragment = new MoreFragment();
 
 
         // handle navigation selection
