@@ -9,30 +9,22 @@
     tools:context=".MainActivity">
 
     <FrameLayout
-        android:id="@+id/flContainer"
+        android:id="@+id/flContainer2"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_above="@id/menu"
         android:padding="12dp">
 
-        <com.google.android.material.navigation.NavigationView
-            android:id="@+id/menu"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:menu="@menu/menu_admin_navigation" />
-
     </FrameLayout>
 
-    <FrameLayout
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/menu"
         android:layout_width="match_parent"
-        android:layout_height="536dp"
-        android:layout_below="@+id/flContainer"
-        android:layout_marginTop="11dp">
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        app:menu="@menu/menu_admin_navigation">
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rvAdmin"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
-    </FrameLayout>
+    </com.google.android.material.bottomnavigation.BottomNavigationView>
 
 
 </RelativeLayout>

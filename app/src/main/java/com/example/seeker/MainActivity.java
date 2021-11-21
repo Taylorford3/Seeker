@@ -8,9 +8,6 @@ import androidx.fragment.app.FragmentManager;
 import android.os.Bundle;
 import android.view.MenuItem;
 
-import com.example.seeker.SearchFragment;
-import com.example.seeker.MoreFragment;
-import com.example.seeker.PostsFragment;
 //import com.example.rattlerconnect.Fragments.ProfileFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -58,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
                         fragment = new PostsFragment();
                         break;
                 }
-                fragmentManager.beginTransaction().replace(R.id.flContainer, fragment).commit();
+                fragmentManager.beginTransaction().replace(R.id.flContainer2, fragment).commit();
                 return true;
             }
         });

@@ -81,7 +81,7 @@ public class PostsFragment extends Fragment {
                     return;
                 }
                 for (Post post : posts){
-                    Log.i(TAG, "Post: " + post.getDescription() + ", username" + post.getUser().getUsername());
+                    Log.i(TAG, "Post: " + post.getDescription() + ", username" + post.getUser().getUsername() + post.getBusiness());
                 }
 
               allPosts.addAll(posts);
