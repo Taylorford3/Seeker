@@ -13,6 +13,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.seeker.R;
+import com.example.seeker.User;
+import com.example.seeker.UserAdapter;
 import com.parse.FindCallback;
 import com.parse.ParseException;
 import com.parse.ParseQuery;
@@ -64,7 +67,7 @@ public class UserFragment extends Fragment {
         ParseQuery<User> query = ParseQuery.getQuery(User.class);
         query.include(User.KEY_USERNAME);
         query.setLimit(20);
-       query.addDescendingOrder(User.KEY_CREATED_KEY);
+        query.addDescendingOrder(User.KEY_CREATED_KEY);
 
 
         query.findInBackground(new FindCallback<User>() {
@@ -75,7 +78,7 @@ public class UserFragment extends Fragment {
                     return;
                 }
                 for (User user : users){
-                    Log.i(TAG, "User: " + user.getBusiness2() + ", username" + user.getUsername());
+                    Log.i(TAG, "User: " + user.getUsername());
                 }
 
                 allUsers.addAll(users);

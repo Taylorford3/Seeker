@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.view.MenuItem;
 
 //import com.example.rattlerconnect.Fragments.ProfileFragment;
+import com.example.seeker.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainActivity extends AppCompatActivity {

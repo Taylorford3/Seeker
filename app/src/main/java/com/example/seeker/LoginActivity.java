@@ -12,7 +12,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.parse.LogInCallback;
-import com.parse.ParseObject;
 import com.parse.ParseUser;
 
 public class LoginActivity extends AppCompatActivity {
