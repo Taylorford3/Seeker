@@ -80,6 +80,7 @@ public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.ViewHolder> 
                     public void onClick(View v) {
                         Toast.makeText(context, post.getBusiness(), Toast.LENGTH_SHORT).show();
                         Intent i = new Intent(context, ReviewActivity.class);
+                        i.putExtra("bus_name", post.getBusiness());
                         context.startActivity(i);
                     }
                 });
