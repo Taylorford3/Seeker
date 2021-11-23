@@ -15,13 +15,13 @@ public class User extends ParseObject {
     public static final String KEY_CREATED_KEY = "createdAt";
 
 
-    public String getUsername() {
-        return getString(KEY_USERNAME);
-    }
+   // public String getUsername() {
+      //  return getString(KEY_USERNAME);
+    //}
 
-    public void setUsername(String username){
-        put(KEY_USERNAME, username);
-    }
+   // public void setUsername(String username){
+     //   put(KEY_USERNAME, username);
+    //}
 
     public ParseFile getProfilePic(){
         return getParseFile(KEY_PROFILEPIC);
@@ -31,13 +31,13 @@ public class User extends ParseObject {
         put(KEY_PROFILEPIC, parseFile);
     }
 
-    //public ParseUser getUser(){
-      //  return getParseUser(KEY_USER);
-   // }
+    public ParseUser getUser(){
+        return getParseUser(KEY_USERNAME);
+    }
 
-   // public void setUser(ParseUser user){
-    //    put(KEY_USER, user);
-   // }
+    public void setUser(ParseUser user){
+        put(KEY_USERNAME, user);
+    }
 
     public String getBusiness2() {
         return getString(KEY_BUSINESS2);
@@ -46,5 +46,7 @@ public class User extends ParseObject {
     public void setBusiness2(String business2){
         put(KEY_BUSINESS2, business2);
     }
+
+
 }
 

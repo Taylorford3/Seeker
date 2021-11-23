@@ -65,7 +65,7 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.ViewHolder>{
         public void bind(User user) {
 
             //tvDescription.setText(user.getDescription());
-            tvUsername.setText(user.getUsername());
+            tvUsername.setText(user.getUser().getUsername());
             tvBusiness2.setText(user.getBusiness2());
             ParseFile image = user.getProfilePic();
             if (image != null) {

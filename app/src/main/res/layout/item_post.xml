@@ -45,16 +45,9 @@
                 android:rating="3.5" />
 
             <TextView
-                android:id="@+id/textView2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:paddingBottom="10dp"
-                android:text="321 Westfield St" />
-
-            <TextView
                 android:id="@+id/tvDescription"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="29dp"
                 android:layout_marginBottom="8dp"
                 android:text="TextView"
                 tools:text="Trying to look hipster!" />
@@ -69,7 +62,7 @@
             <TextView
                 android:id="@+id/textView"
                 android:layout_width="match_parent"
-                android:layout_height="3dp"
+                android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="$$"
                 android:textAlignment="viewEnd" />
@@ -77,9 +70,17 @@
             <TextView
                 android:id="@+id/textView3"
                 android:layout_width="match_parent"
-                android:layout_height="48dp"
+                android:layout_height="2dp"
                 android:layout_weight="1"
                 android:text="50 Reviews" />
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="10dp"
+                android:text="321 Westfield St"
+                android:textAlignment="viewEnd" />
         </LinearLayout>
 
     </LinearLayout>

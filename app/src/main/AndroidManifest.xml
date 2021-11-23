@@ -26,7 +26,8 @@
         android:theme="@style/Theme.Seeker"
         android:usesCleartextTraffic="true"
         tools:targetApi="m">
-        <activity android:name=".ReviewActivity"></activity>
+        <activity android:name=".EditActivity"></activity>
+        <activity android:name=".ReviewActivity" />
         <activity android:name=".AdminActivity" />
         <activity android:name=".SearchActivity" />
         <activity android:name=".RegisterActivity" />
@@ -48,6 +49,7 @@
                 android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/fileprovider" />
         </provider>
+
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />

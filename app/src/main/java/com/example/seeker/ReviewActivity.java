@@ -15,6 +15,7 @@ public class ReviewActivity extends AppCompatActivity {
     TextView tvBusinessName;
     RatingBar ratingBar;
     RecyclerView rvReviews;
+    TextView tvDescription2;
     ImageView ivBusinessPic;
 
 
@@ -26,11 +27,14 @@ public class ReviewActivity extends AppCompatActivity {
 
 
         tvBusinessName = findViewById(R.id.tvBusinessName);
+        tvDescription2 = findViewById(R.id.tvDescription2);
         ivBusinessPic = findViewById(R.id.ivBusinessPic);
         ratingBar = findViewById(R.id.ratingBar);
 
         String business = getIntent().getStringExtra("bus_name");
         tvBusinessName.setText(business);
+        String description = getIntent().getStringExtra("category_id");
+        tvDescription2.setText(description);
     }
 
 }

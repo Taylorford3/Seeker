@@ -79,9 +79,13 @@ public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.ViewHolder> 
                     @Override
                     public void onClick(View v) {
                         Toast.makeText(context, post.getBusiness(), Toast.LENGTH_SHORT).show();
+
                         Intent i = new Intent(context, ReviewActivity.class);
-                        i.putExtra("bus_name", post.getBusiness());
+                        i.putExtra("bus_name" , post.getBusiness());
+                        i.putExtra("category_id" , post.getDescription());
+
                         context.startActivity(i);
+
                     }
                 });
             }

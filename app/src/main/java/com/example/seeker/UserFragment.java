@@ -78,7 +78,7 @@ public class UserFragment extends Fragment {
                     return;
                 }
                 for (User user : users){
-                    Log.i(TAG, "User: " + user.getUsername());
+                    Log.i(TAG, "User: " + user.getUser().getUsername());
                 }
 
                 allUsers.addAll(users);
