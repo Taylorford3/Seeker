@@ -131,7 +131,6 @@
             android:background="#070707"
             android:backgroundTint="#D9D9D9"
             android:buttonTint="#000000"
-            android:checked="false"
             android:paddingStart="5dp"
             android:text="Business Owner?" />
 

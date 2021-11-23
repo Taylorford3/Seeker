@@ -37,20 +37,20 @@ public class RegisterActivity extends AppCompatActivity {
         etPassword = findViewById(R.id.etPassword);
         etEmail = findViewById(R.id.etEmail);
         etPhone = findViewById(R.id.etPhone);
-        //rbBusinessUser = findViewById(R.id.rbBusinessUser);
-        btnSignup = findViewById(R.id.btnSignup);
         rbBusinessUser = findViewById(R.id.rbBusinessUser);
-
+        btnSignup = findViewById(R.id.btnSignup);
+        //rbBusinessUser = findViewById(R.id.rbBusinessUser);
+/*
         rbBusinessUser.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if (isChecked) {ParseUser user = new ParseUser();
+                if (rbBusinessUser.isChecked()) {ParseUser user = new ParseUser();
                     user.put("bus_name", true);
                     user.saveInBackground(); // if you want to save immediately
 
                 }
             }
-        });
+        });*/
 
 
         btnSignup.setOnClickListener(new View.OnClickListener() {
@@ -61,7 +61,6 @@ public class RegisterActivity extends AppCompatActivity {
                 user.setUsername(etUsername.getText().toString());
                 user.setPassword(etPassword.getText().toString());
                 user.setEmail(etEmail.getText().toString());
-
 
 
                 // Set custom properties

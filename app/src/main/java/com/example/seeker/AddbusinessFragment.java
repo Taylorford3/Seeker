@@ -5,6 +5,12 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.core.content.FileProvider;
+import androidx.fragment.app.Fragment;
+
 import android.os.Environment;
 import android.provider.MediaStore;
 import android.util.Log;
@@ -16,13 +22,6 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.core.content.FileProvider;
-import androidx.fragment.app.Fragment;
-
-import com.example.seeker.Post;
-import com.example.seeker.R;
 import com.parse.ParseException;
 import com.parse.ParseFile;
 import com.parse.ParseUser;
@@ -32,10 +31,12 @@ import java.io.File;
 
 import static android.app.Activity.RESULT_OK;
 
-/**
+/*
  * A simple {@link Fragment} subclass.
+ * Use the {@link AddbusinessFragment#newInstance} factory method to
+ * create an instance of this fragment.
  */
-public class ComposeFragment extends Fragment {
+public class AddbusinessFragment extends Fragment {
 
     public static final String TAG = "ComposeFragment";
     public static final int CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE = 42;
@@ -50,7 +51,7 @@ public class ComposeFragment extends Fragment {
 
 
 
-    public ComposeFragment() {
+    public AddbusinessFragment() {
         // Required empty public constructor
     }
 
@@ -177,6 +178,5 @@ public class ComposeFragment extends Fragment {
             }
         });
     }
-
 
 }

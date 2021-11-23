@@ -13,12 +13,6 @@
         android:title="Search"
         app:showAsAction="always" />
     <item
-        android:id="@+id/action_compose"
-        android:enabled="true"
-        android:icon="@android:drawable/ic_input_get"
-        app:showAsAction="ifRoom"
-        android:title="TODO" />
-    <item
         android:id="@+id/action_more"
         android:icon="@drawable/more"
         android:title="More"

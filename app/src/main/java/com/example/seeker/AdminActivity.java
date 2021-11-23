@@ -26,7 +26,7 @@ public class AdminActivity extends AppCompatActivity {
 
         // define your fragments here
         final Fragment userfragment = new UserFragment();
-        //final Fragment fragment2 = new SecondFragment();
+        final Fragment addbusinessfragment = new AddbusinessFragment();
         //final Fragment fragment3 = new ThirdFragment();
 
         // handle navigation selection
@@ -40,8 +40,8 @@ public class AdminActivity extends AppCompatActivity {
                         Fragment fragment;
                         switch (item.getItemId()) {
                             case R.id.action_businesses:
-                               // fragment = fragment2;
-                               // break;
+                                fragment = addbusinessfragment;
+                                break;
                             case R.id.action_reviews:
                             case R.id.action_users:
                             default:

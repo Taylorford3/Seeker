@@ -3,10 +3,15 @@
 
     <item
         android:id="@+id/action_users"
+        android:icon="@drawable/profile_filled"
         android:title="Users" />
     <item
         android:id="@+id/action_businesses"
-        android:title="Businesses" />
+        android:icon="@android:drawable/ic_input_add"
+        android:title="Add" />
+    <item
+        android:id="@+id/action_allbusiness"
+        android:title="Business" />
     <item
         android:id="@+id/action_reviews"
         android:title="Reviews" />

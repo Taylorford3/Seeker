@@ -48,9 +48,9 @@ public class MainActivity extends AppCompatActivity {
                         fragment = new MoreFragment();
                         break;
 
-                    case R.id.action_compose:
+                    /*case R.id.action_compose:
                         fragment = new ComposeFragment();
-                        break;
+                        break;*/
 
                     default:
                         fragment = new PostsFragment();
