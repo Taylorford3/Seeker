@@ -30,6 +30,7 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.ViewHolder>{
     @NonNull
     @Override
     public UserAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+
         View view = LayoutInflater.from(context).inflate(R.layout.item_user, parent, false);
         return new UserAdapter.ViewHolder(view);
     }
@@ -65,12 +66,12 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.ViewHolder>{
         public void bind(User user) {
 
             //tvDescription.setText(user.getDescription());
-            tvUsername.setText(user.getUser().getUsername());
+            tvUsername.setText(user.getName());
             tvBusiness2.setText(user.getBusiness2());
-            ParseFile image = user.getProfilePic();
+           /* ParseFile image = user.getProfilePic();
             if (image != null) {
                 Glide.with(context).load(user.getProfilePic().getUrl()).into(ivProfilePic);
-            }
+            }*/
 
         }
     }
@@ -86,4 +87,6 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.ViewHolder>{
         users.addAll(list);
         notifyDataSetChanged();
     }
+
+
 }

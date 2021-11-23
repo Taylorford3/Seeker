@@ -1,6 +1,10 @@
 package com.example.seeker;
 
 import android.os.Bundle;
+import android.util.Log;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -8,14 +12,6 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.util.Log;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-
-import com.example.seeker.R;
-import com.example.seeker.User;
-import com.example.seeker.UserAdapter;
 import com.parse.FindCallback;
 import com.parse.ParseException;
 import com.parse.ParseQuery;
@@ -29,7 +25,7 @@ import java.util.List;
 public class UserFragment extends Fragment {
     public static final String TAG = "UserFragment";
     private RecyclerView rvUsers;
-    protected UserAdapter adapter;
+    protected UserAdapter adapter2;
     protected List<User> allUsers;
 
     public UserFragment() {
@@ -48,13 +44,14 @@ public class UserFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
         rvUsers = view.findViewById(R.id.rvUsers);
 
         allUsers = new ArrayList<>();
-        adapter = new UserAdapter(getContext(), allUsers);
+        adapter2 = new UserAdapter(getContext(), allUsers);
         //
         //
-        rvUsers.setAdapter(adapter);
+        rvUsers.setAdapter(adapter2);
         //
         rvUsers.setLayoutManager(new LinearLayoutManager(getContext()));
         queryUser();
@@ -65,7 +62,7 @@ public class UserFragment extends Fragment {
     protected void queryUser() {
 
         ParseQuery<User> query = ParseQuery.getQuery(User.class);
-        query.include(User.KEY_USERNAME);
+        query.include(User.KEY_NAME);
         query.setLimit(20);
         query.addDescendingOrder(User.KEY_CREATED_KEY);
 
@@ -78,16 +75,16 @@ public class UserFragment extends Fragment {
                     return;
                 }
                 for (User user : users){
-                    Log.i(TAG, "User: " + user.getUser().getUsername());
+                    Log.i(TAG, "User: " + user.getName()+ user.getBusiness2());
                 }
 
                 allUsers.addAll(users);
-                adapter.notifyDataSetChanged();
+                adapter2.notifyDataSetChanged();
 
             }
         });
     }
 
 
-
 }
+

@@ -6,7 +6,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CompoundButton;
 import android.widget.EditText;
+import android.widget.RadioButton;
 import android.widget.Toast;
 
 import com.parse.ParseException;
@@ -23,6 +25,7 @@ public class RegisterActivity extends AppCompatActivity {
     private EditText etName;
     private EditText etUsername;
     private Button btnSignup;
+    private RadioButton rbBusinessUser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,7 +37,21 @@ public class RegisterActivity extends AppCompatActivity {
         etPassword = findViewById(R.id.etPassword);
         etEmail = findViewById(R.id.etEmail);
         etPhone = findViewById(R.id.etPhone);
+        //rbBusinessUser = findViewById(R.id.rbBusinessUser);
         btnSignup = findViewById(R.id.btnSignup);
+        rbBusinessUser = findViewById(R.id.rbBusinessUser);
+
+        rbBusinessUser.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {ParseUser user = new ParseUser();
+                    user.put("bus_name", true);
+                    user.saveInBackground(); // if you want to save immediately
+
+                }
+            }
+        });
+
 
         btnSignup.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -44,9 +61,13 @@ public class RegisterActivity extends AppCompatActivity {
                 user.setUsername(etUsername.getText().toString());
                 user.setPassword(etPassword.getText().toString());
                 user.setEmail(etEmail.getText().toString());
+
+
+
                 // Set custom properties
                 user.put("phone", etPhone.getText().toString());
                 user.put("name",   etName.getText().toString());
+
 
                 // Invoke signUpInBackground
                 user.signUpInBackground(new SignUpCallback() {

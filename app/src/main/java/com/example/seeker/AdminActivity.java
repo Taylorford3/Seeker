@@ -39,13 +39,11 @@ public class AdminActivity extends AppCompatActivity {
 
                         Fragment fragment;
                         switch (item.getItemId()) {
-                            case R.id.action_users:
-                                fragment = userfragment;
-                                break;
                             case R.id.action_businesses:
                                // fragment = fragment2;
                                // break;
                             case R.id.action_reviews:
+                            case R.id.action_users:
                             default:
                                 fragment = userfragment;
                                 break;

@@ -25,7 +25,8 @@
         android:layout_marginTop="307dp"
         android:layout_marginEnd="7dp"
         android:layout_marginBottom="45dp"
-        android:padding="10dp">
+        android:padding="10dp"
+        app:cardBackgroundColor="#00034D">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -48,6 +49,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
+                    android:fontFamily="@font/anton"
                     android:hint="@string/prompt_password"
                     android:inputType="textPassword"
                     android:maxLines="1"
@@ -60,8 +62,9 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="20dp"
                     android:background="#323030"
+                    android:fontFamily="@font/anton"
                     android:text="@string/login"
-                    android:textColor="#E5213C"
+                    android:textColor="#020202"
                     android:textSize="16sp"
                     app:iconTint="#0B0A3E" />
 
@@ -73,9 +76,10 @@
                 android:layout_height="36dp"
                 android:layout_marginStart="31dp"
                 android:layout_marginTop="5dp"
+                android:fontFamily="@font/anton"
                 android:gravity="center"
                 android:text="@string/create_new"
-                android:textColor="#383838"
+                android:textColor="#FF225C"
                 android:textSize="16sp" />
 
         </LinearLayout>
@@ -85,6 +89,8 @@
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:layout_marginTop="10dp"
+            android:background="#D9D9D9"
+            android:fontFamily="@font/anton"
             android:hint="@string/prompt_username"
             android:inputType="textNoSuggestions"
             android:maxLines="1"
