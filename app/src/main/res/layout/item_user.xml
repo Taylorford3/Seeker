@@ -51,7 +51,7 @@
                     app:layout_constraintTop_toTopOf="parent">
 
                     <TextView
-                        android:id="@+id/tvUsername"
+                        android:id="@+id/tvSocialUser"
                         android:layout_width="match_parent"
                         android:layout_height="16dp"
                         android:layout_weight="1"

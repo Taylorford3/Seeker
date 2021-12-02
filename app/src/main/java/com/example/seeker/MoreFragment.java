@@ -33,8 +33,8 @@ public class MoreFragment extends Fragment {
     Button btnEdit;
     public static final String TAG = "MoreFragment";
     private RecyclerView rvMore;
-    protected PostsAdapter adapter;
-    protected List<Post> allPosts;
+    protected SocialAdapter adapter3;
+    protected List<Social> allSocials;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -61,39 +61,39 @@ public class MoreFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         rvMore = view.findViewById(R.id.rvMore);
 
-        allPosts = new ArrayList<>();
-        adapter = new PostsAdapter(getContext(), allPosts);
+        allSocials = new ArrayList<>();
+        adapter3 = new SocialAdapter(getContext(), allSocials);
         //
         //
-        rvMore.setAdapter(adapter);
+        rvMore.setAdapter(adapter3);
         //
         rvMore.setLayoutManager(new LinearLayoutManager(getContext()));
-        queryPost();
+        querySocial();
 
 
     }
 
-    protected void queryPost() {
+    protected void querySocial() {
 
-        ParseQuery<Post> query = ParseQuery.getQuery(Post.class);
-        query.include(Post.KEY_USER);
+        ParseQuery<Social> query = ParseQuery.getQuery(Social.class);
+        query.include(Social.KEY_SOCIALUSER);
         query.setLimit(20);
-        query.addDescendingOrder(Post.KEY_CREATED_KEY);
+        query.addDescendingOrder(Social.KEY_CREATED_KEY2);
 
 
-        query.findInBackground(new FindCallback<Post>() {
+        query.findInBackground(new FindCallback<Social>() {
             @Override
-            public void done(List<Post> posts, ParseException e) {
+            public void done(List<Social> socials, ParseException e) {
                 if (e != null) {
                     Log.e(TAG, "Issue with getting posts");
                     return;
                 }
-                for (Post post : posts) {
-                    Log.i(TAG, "Post: " + post.getDescription() + ", username" + post.getUser().getUsername() + post.getBusiness());
+                for (Social social : socials) {
+                    Log.i(TAG, "Post: " + social.getCaption() + ", username" + social.getSocialUser().getUsername());
                 }
 
-                allPosts.addAll(posts);
-                adapter.notifyDataSetChanged();
+                allSocials.addAll(socials);
+                adapter3.notifyDataSetChanged();
 
             }
         });

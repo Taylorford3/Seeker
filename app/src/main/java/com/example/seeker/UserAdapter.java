@@ -10,9 +10,6 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.bumptech.glide.Glide;
-import com.parse.ParseFile;
-
 import java.util.List;
 
 public class UserAdapter extends RecyclerView.Adapter<UserAdapter.ViewHolder>{
@@ -60,7 +57,7 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.ViewHolder>{
             //tvUsername = itemView.findViewById(R.id.tvUsername);
             tvBusiness2 = itemView.findViewById(R.id.tvBusiness2);
             ivProfilePic = itemView.findViewById(R.id.ivProfilePic);
-            tvUsername = itemView.findViewById(R.id.tvUsername);
+            tvUsername = itemView.findViewById(R.id.tvSocialUser);
         }
 
         public void bind(User user) {
