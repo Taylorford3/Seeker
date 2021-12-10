@@ -8,7 +8,7 @@
         android:title="Home"
         app:showAsAction="always" />
     <item
-        android:id="@+id/action_search"
+        android:id="@+id/action_search1"
         android:icon="?android:attr/actionModeWebSearchDrawable"
         android:title="Search"
         app:showAsAction="always" />

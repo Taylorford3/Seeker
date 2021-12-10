@@ -9,9 +9,9 @@
         android:id="@+id/ivReviewPic"
         android:layout_width="134dp"
         android:layout_height="125dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="4dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.057"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvReview"
         app:srcCompat="@drawable/buspic" />
@@ -20,12 +20,20 @@
         android:id="@+id/tvReview"
         android:layout_width="385dp"
         android:layout_height="65dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="84dp"
         android:text="TextView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.615"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvUser" />
+        app:layout_constraintTop_toBottomOf="@+id/tvReviewUser" />
+
+    <RatingBar
+        android:id="@+id/ReviewRatingBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/tvReview"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <ImageView
         android:id="@+id/ivProfilePic2"
@@ -38,7 +46,7 @@
         app:srcCompat="@drawable/profile_filled" />
 
     <TextView
-        android:id="@+id/tvUser"
+        android:id="@+id/tvReviewUser"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="28dp"

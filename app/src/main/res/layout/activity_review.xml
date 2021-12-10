@@ -53,22 +53,22 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvDescription2" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvReviews"
-        android:layout_width="411dp"
-        android:layout_height="240dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent" />
-
     <Button
         android:id="@+id/btnClaim"
         android:layout_width="298dp"
         android:layout_height="63dp"
         android:text="Do you own this business? Claim this business now"
-        app:layout_constraintBottom_toTopOf="@+id/rvReviews"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ratingBar" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvReviews"
+        android:layout_width="411dp"
+        android:layout_height="288dp"
+        android:layout_marginTop="72dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ratingBar" />
 </androidx.constraintlayout.widget.ConstraintLayout>

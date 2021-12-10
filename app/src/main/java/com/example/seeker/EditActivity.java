@@ -3,6 +3,7 @@ package com.example.seeker;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -27,6 +28,7 @@ public class EditActivity extends AppCompatActivity {
     EditText et_email;
     EditText et_phone;
     Button btnUpdate;
+    Button btnDeactivate;
     //String name;
     //ParseUser user;
 
@@ -41,6 +43,8 @@ public class EditActivity extends AppCompatActivity {
         et_email = findViewById(R.id.et_email);
         et_phone = findViewById(R.id.et_phone);
         btnUpdate= findViewById(R.id.btnUpdate);
+        btnDeactivate= findViewById(R.id.btnDeactivate);
+
         //View view =  inflater.inflate(R.layout.activity_edit, container, false);
         //NavigationView navigationView = (NavigationView) findViewById(R.id.activity_view);
 
@@ -95,6 +99,20 @@ public class EditActivity extends AppCompatActivity {
 
             }
         });
+
+        btnDeactivate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                ParseUser.getCurrentUser().deleteInBackground();
+                ParseUser.logOutInBackground();
+                final Intent i = new Intent(EditActivity.this, LoginActivity.class);
+                startActivity(i);
+                finish();
+
+            }
+        });
+
 
 
     }

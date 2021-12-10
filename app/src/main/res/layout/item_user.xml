@@ -8,95 +8,73 @@
     android:layout_margin="8dp"
     android:orientation="vertical">
 
-    <LinearLayout
-        android:layout_width="406dp"
-        android:layout_height="129dp"
-        android:layout_marginTop="4dp"
-        android:orientation="horizontal"
-        android:padding="2dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="391dp"
+        android:layout_height="match_parent">
 
-        <FrameLayout
-            android:layout_width="419dp"
-            android:layout_height="129dp"
-            android:layout_weight="1">
+        <TextView
+            android:id="@+id/tvSocialUser"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="TextView"
+            android:textColor="#020202"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toTopOf="@+id/tvBusiness2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.222"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
+        <ImageView
+            android:id="@+id/ivProfilePic"
+            android:layout_width="53dp"
+            android:layout_height="42dp"
+            android:layout_marginStart="4dp"
+            android:layout_weight="1"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/profile_filled" />
 
-                <ImageView
-                    android:id="@+id/ivProfilePic"
-                    android:layout_width="94dp"
-                    android:layout_height="0dp"
-                    android:layout_weight="1"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toStartOf="@+id/linearLayout3"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:srcCompat="@drawable/profile_filled" />
+        <Switch
+            android:id="@+id/btnPause"
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:text="Pause"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.705"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0" />
 
-                <LinearLayout
-                    android:id="@+id/linearLayout3"
-                    android:layout_width="208dp"
-                    android:layout_height="0dp"
-                    android:layout_weight="1"
-                    android:orientation="vertical"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toStartOf="@+id/linearLayout4"
-                    app:layout_constraintStart_toEndOf="@+id/ivProfilePic"
-                    app:layout_constraintTop_toTopOf="parent">
+        <ImageButton
+            android:id="@+id/btnDelete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/btnPause"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@android:drawable/btn_dialog" />
 
-                    <TextView
-                        android:id="@+id/tvSocialUser"
-                        android:layout_width="match_parent"
-                        android:layout_height="16dp"
-                        android:layout_weight="1"
-                        android:text="TextView"
-                        android:textColor="#020202"
-                        android:textSize="24sp" />
+        <TextView
+            android:id="@+id/tvBusiness2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="4dp"
+            android:layout_weight="1"
+            android:text="TextView"
+            android:textColor="#050505"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/btnPause"
+            app:layout_constraintHorizontal_bias="0.454"
+            app:layout_constraintStart_toStartOf="parent" />
 
-                    <TextView
-                        android:id="@+id/tvBusiness2"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="TextView"
-                        android:textColor="#050505"
-                        android:textSize="18sp" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:id="@+id/linearLayout4"
-                    android:layout_width="wrap_content"
-                    android:layout_height="0dp"
-                    android:layout_weight="1"
-                    android:orientation="vertical"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toEndOf="@+id/linearLayout3"
-                    app:layout_constraintTop_toTopOf="parent">
-
-                    <Switch
-                        android:id="@+id/switch1"
-                        android:layout_width="match_parent"
-                        android:layout_height="60dp"
-                        android:text="Switch" />
-
-                    <Switch
-                        android:id="@+id/switch3"
-                        android:layout_width="match_parent"
-                        android:layout_height="57dp"
-                        android:text="Switch" />
-                </LinearLayout>
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-        </FrameLayout>
-
-    </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </LinearLayout>

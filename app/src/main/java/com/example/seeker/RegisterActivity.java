@@ -66,6 +66,7 @@ public class RegisterActivity extends AppCompatActivity {
                 // Set custom properties
                 user.put("phone", etPhone.getText().toString());
                 user.put("name",   etName.getText().toString());
+                user.put("bus_user", rbBusinessUser.isChecked());
 
 
                 // Invoke signUpInBackground

@@ -19,6 +19,7 @@ import android.widget.Toast;
 import com.parse.FindCallback;
 import com.parse.ParseException;
 import com.parse.ParseQuery;
+import com.parse.ParseUser;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -31,6 +32,7 @@ import java.util.List;
 public class MoreFragment extends Fragment {
 
     Button btnEdit;
+    Button btnLogout;
     public static final String TAG = "MoreFragment";
     private RecyclerView rvMore;
     protected SocialAdapter adapter3;
@@ -44,6 +46,7 @@ public class MoreFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_more, container, false);
 
         btnEdit = view.findViewById(R.id.btnEdit);
+        btnLogout = view.findViewById(R.id.btnLogout);
 
 
         btnEdit.setOnClickListener(new View.OnClickListener() {
@@ -53,6 +56,17 @@ public class MoreFragment extends Fragment {
                 startActivity(new Intent(getActivity(), EditActivity.class));
             }
         });
+
+        btnLogout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                ParseUser.logOutInBackground();
+                startActivity(new Intent(getActivity(), LoginActivity.class));
+
+            }
+        });
+
         return view;
     }
 
@@ -85,7 +99,7 @@ public class MoreFragment extends Fragment {
             @Override
             public void done(List<Social> socials, ParseException e) {
                 if (e != null) {
-                    Log.e(TAG, "Issue with getting posts");
+                    Log.e(TAG, "Issue with getting posts", e);
                     return;
                 }
                 for (Social social : socials) {

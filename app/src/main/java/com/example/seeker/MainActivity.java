@@ -9,7 +9,6 @@ import android.os.Bundle;
 import android.view.MenuItem;
 
 //import com.example.rattlerconnect.Fragments.ProfileFragment;
-import com.example.seeker.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainActivity extends AppCompatActivity {
@@ -41,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
                     case R.id.action_home:
                         fragment = new PostsFragment();
                         break;
-                   case R.id.action_search:
+                   case R.id.action_search1:
                         fragment = new SearchFragment();
                         break;
                     case R.id.action_more:
